@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+  # TRAEFIK - traefik.localhost
+  traefik:
+    image: "traefik:v2.4"
+    command:
+      - "--log.level=INFO"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--providers.docker.defaultRule=HostRegexp(`{_:{{ index .Labels \"com.docker.compose.service\" }}\\..*}`)"
+    ports:
+      - "${PUBLIC_PORT-80}:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.traefik.rule: HostRegexp(`{_:traefik\..*}`)
+      traefik.http.services.traefik.loadbalancer.server.port: 8080
+
+  # LANDING - landing.localhost
+  landing:
+    image: nginx:latest
+    restart: always
+    volumes:
+      - ./module-a:/usr/share/nginx/html:ro
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.landing.rule: HostRegexp(`{_:landing\..*}`)
+      traefik.http.services.landing.loadbalancer.server.port: 80
+  
+  # ADMIN - admin.localhost
+  admin:
+    build:
+      context: module-b
+      dockerfile: Dockerfile
+    volumes:
+      - ./module-b/app:/app/app
+      - ./module-b/config:/app/config
+      - ./module-b/database:/app/database
+      - ./module-b/routes:/app/routes
+      - ./module-b/storage:/app/storage
+      - ./module-b/public:/app/public
+      - ./module-b/bootstrap:/app/bootstrap
+      - ./module-b/resources:/app/resources
+    env_file:
+      - module-b/.env
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.admin.rule: HostRegexp(`{_:admin\..*}`)
+      traefik.http.services.admin.loadbalancer.server.port: 80
+
+  # PHPMYADMIN - pma.localhost
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: "db"
+      PMA_USER: "root"
+      PMA_PASSWORD: "toor"
+      PMA_ARBITRARY: 1
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.pma.rule: HostRegexp(`{_:pma\..*}`)
+      traefik.http.services.pma.loadbalancer.server.port: 80
+  
+  # DATABASE - db.localhost
+  db:
+    image: mariadb:latest
+    environment:
+      - MARIADB_ROOT_PASSWORD=toor
+      - MARIADB_DATABASE=database
+      - MARIADB_ROOT_HOST=%
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql
