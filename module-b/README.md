@@ -1,66 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Module B - Restaurant Owners' Hub
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+In this modul you will develop a server-side rendered administration page where restaurant owners can easily manage their restaurant profiles and data. This hub empowers restaurant owners to update menus, respond to reviews, and keep their information up-to-date, ensuring a seamless and engaging experience for customers.Choose a suitable server-side framework from the available options in the provided Infrastructure List. Carefully review the provided detailed description of the dynamic website's account management functionalities. Understand the various tasks and actions that users need to perform within their accounts.
 
-## About Laravel
+## Task List:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 1. Database Design:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Design a robust and efficient database schema to accommodate user accounts and related data.
+Identify the necessary tables, relationships, and fields required for account management.
+Ensure proper normalization and data integrity in the database design.
+Utilize the provided example CSV files to import initial data into the database. CSV files can be found in the assets/module-B/initial-data folder.
+Develop a script or mechanism to parse and import CSV data into relevant database tables.
+Address any data normalization challenges that may arise from the provided CSV data.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. User Authentication and Security:
 
-## Learning Laravel
+-   Implement a secure user authentication system to enable users to create and access accounts.
+    Utilize encryption and hashing techniques to store and manage user passwords securely. Implement account locking mechanisms to enhance account security.
+-   Design a system that supports two user roles: "dineEasyAdmin" and "restaurantAdmin". DineEasy admins will have access to the entire system, while restaurant administrators will have access only to their respective restaurant's data.
+-   Develop a user registration mechanism for restaurant administrator roles. Capture essential information, including email address (as username), password, name, restaurant name, type and location. Implement appropriate validation for email address field. Enable the uploading of image for restaurant logo.
+-   Create a login form that authenticates users based on their role. Administrators should be redirected to the admin dashboard, while restaurant administrators should be directed to their respective restaurant's dashboard upon successful login.
+-   Implement a mechanism to lock user accounts after three failed login attempts. Determine 30 seconds duration for which the account should be locked out. Users should be notified about the account lockout and provided with information about the lock out duration.
+-   Configure protected routes that are accessible only after successful user authentication. Implement role-based access control to restrict certain actions to authorized users. Ensure that sensitive account information is accessible only to the respective account owner and dineEasy admins.
+-   Create two sample user for both roles:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| email                    | name        | role            | restaurantId | password |
+| ------------------------ | ----------- | --------------- | ------------ | -------- |
+| ferenc.kis@sze.hu        | Ferenc Kis  | restaurantAdmin | 1            | 12345678 |
+| laszlo.nagy@dineeasy.com | Laszlo Nagy | dineEasyAdmin   |              | 12345678 |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   When the authenticated user click on the Logout link they will be logged out and redirected to the login page.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 3. Restaurant's dashboard:
 
-## Laravel Sponsors
+Create user-friendly interfaces where restaurant admin user can view and edit their respective restaurant's data.
+Follow the provided wireframe in implementing the dashboard. All the subpages of the dashboard should contain a "Back to the dahboard" and a "Logout" link.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+-   **Edit profile**
+    When the restaurant admin click on the "Edit profile" button they will be redirected to the Edit profile page. On that page all the profile data can be modified and saved.
+-   **Menu management**
+    Design the interface for restaurant owners to manage their menus.
+    Implement CRUD operations for menu items, including adding, updating, and deleting dishes.
+    Allow the inclusion of dish names and prices.
+-   **Reservation Handling**
+    It will be the page for a reservation system with the following feautres:
+    _ restaurant owners can manage incoming reservations
+    _ Displaying a list of reservations with relevant details like date, time, party size, and contact information \* Enable the confirmation or cancellation of reservations
+    **You do not need to implement the features above in your prototype. You should display only the "Reservation" title on this page.**
 
-### Premium Partners
+-   **Review Management**
+    Implement a feature for restaurant owners to manage customer reviews.
+    Display customer feedback along with ratings and comments.
+    In the near feature the page will also allow restaurant owners to post thoughtful responses to reviews, but you do not need to implemet this feature right now.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 4. OWASP Guidelines Implementation:
 
-## Contributing
+Implement security measures to protect against common web vulnerabilities (OWASP guidelines).
+Sanitize and validate user inputs to prevent SQL injection and cross-site scripting (XSS) attacks.
+Implement CSRF (Cross-Site Request Forgery) protection to ensure secure form submissions.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+docker compose exec admin php artisan migrate
