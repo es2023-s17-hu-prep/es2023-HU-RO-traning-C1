@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->enum('role', ['restaurantAdmin', 'dineEasyAdmin'])->default('dineEasyAdmin');
+            $table->foreignId('restaurantId')->nullable();
+            $table->tinyInteger('failedAttempts')->default(0);
+            $table->dateTime('lockedOutUntil')->nullable();
             $table->timestamps();
         });
     }

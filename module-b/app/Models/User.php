@@ -12,34 +12,18 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    const MAX_LOGIN_ATTEMPTS = 3;
+    const LOCK_DURATION_SECONDS = 30;
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    protected $guarded = [];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+    protected $casts = ['lockedOutUntil' => 'datetime'];
+
+    public function isSuperAdmin(){
+        return $this->role === 'dineEasyAdmin';
+    }
+
+    public function restaurant(){
+        return $this->belongsTo(Restaurant::class);
+    }
 }
