@@ -1,0 +1,363 @@
+:root {
+  --c-primary: #111827;
+  --c-primary-negative: white;
+  --c-secondary: #949aa3;
+  --c-accent: #7c3aed;
+  --c-background: white;
+  --c-backgrund-2: #ede9fe;
+  --c-background-3: #f6f9ff;
+
+  --s-200: 0.5rem;
+  --s-300: 0.75rem;
+  --s-400: 1rem;
+  --s-600: 2rem;
+  --s-800: 6rem;
+  --s-900: 6rem;
+
+  --p-200: 0.5rem;
+  --p-300: 0.75rem;
+  --p-400: 1rem;
+  --p-500: 1.5rem;
+  --p-600: 2rem;
+  --p-700: 3rem;
+  --p-800: 6rem;
+  --p-900: 6rem;
+
+  --fs-300: 0.75rem;
+  --fs-400: 1rem;
+  --fs-500: 1.2rem;
+  --fs-700: 3rem;
+  --fs-900: 3.5rem;
+
+  --br-400: 0.5rem;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  font-size: var(--fs-700);
+}
+p {
+  font-weight: 400;
+  color: var(--c-secondary);
+  font-size: var(--fs-500);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* utilities */
+
+/* styles */
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header a {
+  font-weight: bold;
+}
+navbar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+header > img {
+  margin-right: 1rem;
+}
+
+.hero__content p {
+  margin: var(--p-500) 0rem;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: max(80vh, fit-content);
+  width: auto;
+  justify-content: space-between;
+}
+
+.hero h1 {
+  font-size: var(--fs-900);
+}
+
+.primary-button {
+  border: none;
+  background-color: var(--c-accent);
+  color: var(--c-primary-negative);
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  gap: 0.3rem;
+  font-weight: bold;
+}
+.icon-button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--c-accent);
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 25rem);
+  padding: var(--p-500) var(--p-400);
+  box-shadow: 3px 2px 7px 1px grey;
+  border-radius: var(--br-400);
+  gap: var(--p-300);
+}
+
+.featured > p {
+  color: var(--c-primary);
+}
+.restaurant > img {
+  border-radius: 0.7rem;
+  width: 100%;
+}
+.restaurant > button {
+  margin-top: 1rem;
+  align-self: end;
+}
+
+.review > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.review {
+  background-color: var(--c-background);
+  width: min(100%, 25rem);
+  padding: var(--p-500) var(--p-400);
+  box-shadow: 3px 2px 7px 1px grey;
+  border-radius: var(--br-400);
+  gap: var(--p-300);
+
+  display: flex;
+  align-items: start;
+  width: 100%;
+}
+.review img {
+  width: 2rem;
+}
+.reviews {
+  padding: var(--s-900) 2rem;
+}
+
+.search-bar {
+  display: flex;
+  gap: 1rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+
+  padding: var(--s-900) 2rem;
+}
+
+.search input {
+  border: none;
+  background: none;
+}
+
+.search-container {
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 0.7rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-container > * {
+  display: flex;
+  align-items: center;
+}
+.search-actions {
+  gap: 0.5rem;
+  display: flex;
+}
+
+.search-bar input {
+  font-weight: bold;
+}
+.search-bar input::placeholder {
+  content: "";
+  font-weight: bold;
+}
+button.show-more {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--c-accent);
+  font-size: large;
+  margin-top: 1rem;
+}
+button.show-more img {
+  margin-left: 0.5rem;
+}
+
+.search-bar > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 3rem;
+  border-radius: 0.7rem;
+  border: none;
+  background-color: #ede9fe;
+}
+
+footer {
+  padding: var(--s-900) var(--s-900);
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  background-color: black;
+}
+.social > h2 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+footer .info {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer h4 {
+  color: var(--c-secondary);
+}
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+footer * {
+  color: white;
+}
+.aligner {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 50em) {
+  .mobile-only {
+    display: inherit;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+  .hero__content {
+    margin-top: var(--p-400);
+  }
+  .column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .reviews {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .restaurants {
+    display: flex;
+    flex-direction: column;
+    gap: var(--p-600);
+    margin-top: var(--p-700);
+  }
+  .restaurant {
+    width: 100%;
+  }
+  .featured {
+    padding: 2rem;
+  }
+  .top-section {
+    background-color: var(--c-background-3);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: var(--p-200);
+  }
+  .hero__content {
+    width: 42rem;
+  }
+}
+
+@media (min-width: 50em) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: inherit;
+  }
+  .reviews h1 {
+    max-width: 30rem;
+  }
+  .reviews > .column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .reviews > .column:last-of-type {
+    margin-top: 3rem;
+  }
+  .reviews {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--c-backgrund-2);
+    gap: 2rem;
+  }
+  .column {
+    width: 35rem;
+  }
+
+  .search > p {
+    color: var(--c-primary);
+  }
+  .restaurants {
+    display: flex;
+    justify-content: center;
+    gap: var(--p-600);
+    margin-top: var(--p-700);
+  }
+  .featured {
+    padding: var(--p-900);
+  }
+  .top-section {
+    background-color: var(--c-background-3);
+    padding-left: var(--p-900);
+    padding-right: var(--p-900);
+    padding-top: var(--p-200);
+  }
+  .hero__content {
+    width: 42rem;
+  }
+}

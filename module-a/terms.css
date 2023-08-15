@@ -1,0 +1,17 @@
+@media (max-width: 50em) {
+  main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: var(--p-200);
+  }
+}
+
+@media (min-width: 50em) {
+  main {
+    padding-left: var(--p-900);
+    padding-right: var(--p-900);
+    padding-top: var(--p-200);
+  }
+}
+
+
