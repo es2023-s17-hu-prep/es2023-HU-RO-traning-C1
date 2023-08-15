@@ -1,0 +1,18 @@
+/* FIND YOUR PERFECT DINING SPOT */
+.dining {
+  margin-block-start: 0rem;
+}
+.dining h2,
+.dining h6 {
+  text-align: center;
+}
+
+.dining > a {
+  color: var(--color-purple);
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}

@@ -1,0 +1,106 @@
+/* RESTAURANT FEATURED SECTION */
+.featured {
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-block-start: 10rem;
+  position: relative;
+}
+
+.featured h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
+.featured h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* RESTAURANT CARD */
+.restaurants {
+  display: flex;
+  gap: 2rem;
+}
+.restaurant {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  max-width: 100%;
+}
+.restaurant .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+}
+.restaurant .header span {
+  font-size: 22px;
+  font-weight: bold;
+}
+.restaurant p {
+  color: #666;
+  padding-inline: 2rem;
+}
+.restaurant a {
+  margin-left: auto;
+  color: var(--color-purple);
+  margin-top: auto;
+}
+
+/* BLOBS */
+.blob-one {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: var(--color-purple-lighter);
+  top: 100px;
+  right: -200px;
+  z-index: -1;
+}
+.blob-two {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: var(--color-purple-lighter);
+  top: 600px;
+  left: -100px;
+  z-index: -1;
+}
+
+.restaurant-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* MEDIA QUERY */
+@media screen and (width <= 768px) {
+  .featured {
+    padding: 3rem;
+    margin-block-start: 0;
+  }
+  .restaurant-img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .restaurants {
+    flex-direction: column;
+  }
+  .blob-one {
+    top: 400px;
+    right: unset;
+    left: -300px;
+  }
+  .blob-two {
+    left: unset;
+    right: -200px;
+    top: 1000px;
+  }
+}

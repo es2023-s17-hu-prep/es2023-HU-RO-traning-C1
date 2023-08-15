@@ -1,0 +1,138 @@
+/* HERO SECTION STYLES */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 8rem;
+  padding-inline-end: 15rem;
+  gap: 12rem;
+}
+.hero h1 {
+  font-size: 75px;
+  line-height: 1.1em;
+}
+
+/* ABSTRACT ELEMENTS AT THE BACK */
+.darkness {
+  position: absolute;
+  background-color: var(--color-light-bg);
+  width: 100vw;
+  height: 700px;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 80%, 100% 0%);
+  z-index: -1;
+}
+.blob {
+  position: absolute;
+  background-color: var(--color-purple-light);
+  width: 600px;
+  height: 600px;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  filter: blur(100px);
+  border-radius: 50%;
+}
+.left-line-dark {
+  position: absolute;
+  top: 570px;
+  left: 0;
+  height: 130px;
+  z-index: -1;
+  width: 500px;
+  background-color: var(--color-purple);
+  clip-path: polygon(0 50%, 0% 100%, 100% 75%, 100% 20%);
+}
+.left-line-light {
+  position: absolute;
+  top: 650px;
+  left: 0;
+  height: 130px;
+  z-index: -1;
+  width: 300px;
+  background-color: var(--color-purple-lighter);
+  clip-path: polygon(0 40%, 0% 95%, 100% 80%, 100% 23%);
+}
+.right-line-dark {
+  position: absolute;
+  top: 480px;
+  right: 0;
+  z-index: -1;
+  height: 130px;
+  width: 500px;
+  background-color: var(--color-purple);
+  clip-path: polygon(0 50%, 0% 100%, 100% 75%, 100% 20%);
+}
+.right-line-light {
+  position: absolute;
+  top: 445px;
+  right: 0;
+  z-index: -1;
+  height: 130px;
+  width: 800px;
+  background-color: var(--color-purple-light);
+  clip-path: polygon(0 40%, 0% 100%, 100% 50%, 100% 0%);
+}
+.right-line-lighter {
+  position: absolute;
+  top: 347px;
+  right: 100px;
+  height: 130px;
+  z-index: -1;
+  width: 300px;
+  background-color: var(--color-purple-lighter);
+  clip-path: polygon(0 40%, 0% 95%, 100% 80%, 100% 23%);
+}
+
+/* SECTIONS */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.hero-left p {
+  font-size: 1.15rem;
+  max-width: 800px;
+}
+
+/* MEDIA QUERY */
+@media screen and (width <= 768px) {
+  .hero {
+    flex-direction: column;
+    padding-inline: 3rem;
+    padding-block-start: 3rem;
+  }
+  .hero h1 {
+    font-size: 55px;
+    line-height: 1.1em;
+  }
+  .blob {
+    right: -150px;
+    top: -150px;
+  }
+
+  .darkness {
+    height: 1000px;
+  }
+  .left-line-dark {
+    top: 900px;
+  }
+  .left-line-light {
+    top: 970px;
+  }
+
+  .right-line-dark {
+    top: 850px;
+    width: 100px;
+  }
+  .right-line-light {
+    top: 820px;
+    width: 200px;
+  }
+  .right-line-lighter {
+    width: 80px;
+    top: 744px;
+  }
+}
