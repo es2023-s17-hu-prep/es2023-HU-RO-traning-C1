@@ -1,0 +1,39 @@
+main {
+    background: white;
+    padding-top: 6rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    background: white;
+}
+
+header {
+    background: white !important
+}
+
+
+h1 {
+    margin-bottom: 0.6rem;
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 0.6rem;
+}
+
+b {
+    display: block;
+}
+
+p{
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        padding: 6rem 2rem;
+    }
+}

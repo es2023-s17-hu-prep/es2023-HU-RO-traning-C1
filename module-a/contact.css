@@ -1,0 +1,81 @@
+header {
+    background: white !important;
+}
+
+main {
+    padding: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main > .row {
+    gap: 5rem
+}
+
+.form {
+    width: 100%;
+}
+
+.form button {
+    margin-left: auto;
+}
+
+.contact-card {
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    background: var(--primary);
+    border-radius: 8px;
+    padding: 2rem;
+    color: white;
+    width: 360px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card::before {
+    background: var(--secondary);
+    opacity: 0.3;
+    width: 150px;
+    height: 150px;
+    border-radius: 1000px;
+    content: " ";
+    bottom: 40px;
+    right: 40px;
+    position: absolute;
+}
+
+.contact-card::after {
+    background: var(--secondary);
+    opacity: 0.3;
+    width: 250px;
+    height: 250px;
+    border-radius: 1000px;
+    content: " ";
+    bottom: -100px;
+    right: -100px;
+    position: absolute;
+}
+
+.contact-details {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.social {
+    margin-top: auto;
+    gap: 1.25rem;
+}
+
+.social img {
+    width: 24px;
+}

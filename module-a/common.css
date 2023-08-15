@@ -1,0 +1,175 @@
+:root {
+    --primary: #7C3AED;
+    --light: #EDE9FE;
+    --secondary: #CBB4F9;
+    --yellow: #F9B501;
+    --gray: #F5F5F5;
+    --dark-gray: #676F7B;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px 8px;
+    box-sizing: border-box;
+    background: var(--gray);
+    color: var(--dark-gray);
+    border: none;
+    border-radius: 4px;
+}
+
+* {
+    margin: 0
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+button, .btn {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+}
+
+.btn-secondary {
+    background: var(--light);
+    color: var(--primary);
+    width: max-content;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.btn-primary {
+    color: white;
+    background: var(--primary);
+    font-weight: 600;
+    width: max-content;
+}
+
+.btn-simple{
+    background: none;
+    padding: 8px;
+}
+
+.btn-text {
+    color: var(--primary);
+    font-weight: bold;
+    background: none;
+    padding: 4px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+header.row {
+    padding: 16px;
+    box-sizing: border-box;
+    max-width: 1232px;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    gap: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    z-index: 100;
+    background: var(--light);
+    border-radius: 8px;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem
+}
+
+header nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+section {
+    padding: 3rem;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+}
+
+.mobile-only {
+    display: none;
+}
+
+footer {
+    padding: 3rem 6rem;
+    background: black;
+    color: white;
+}
+
+footer > .row {
+    justify-content: space-between;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer .logomark {
+    width: 32px;
+    height: 32px;
+}
+
+@media screen and (max-width: 800px) {
+    .mobile-only{
+        display: block;
+    }
+    .desktop-only{
+        display: none;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    h2{
+        font-size: 30px;
+        text-align: center;
+    }
+    h2+p{
+        text-align: center;
+    }
+    footer {
+        padding: 1rem;
+    }
+}
