@@ -1,0 +1,175 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* AUTH */
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: start;
+}
+.auth-card {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 400px;
+    margin-block: auto;
+}
+
+/* COMPONENTS */
+.button {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    border: 0;
+}
+.button:hover,
+.button:focus-within {
+    background-color: #211156;
+}
+.button.secondary {
+    background-color: #ddd;
+    color: black;
+}
+.button.secondary:hover,
+.button.secondary:focus-within {
+    background-color: #ccc;
+}
+input {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+input.error {
+    border-color: red;
+    outline-color: red !important;
+}
+.alert {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: darkred;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+.auth-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+}
+
+/* NAV */
+nav {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.mla {
+    margin-left: auto;
+}
+
+/* ADMIN */
+.admin-restaurants {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+.admin-restaurants form {
+    display: block;
+}
+
+/* DASHBOARD */
+.dashboard {
+    padding: 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.restaurant-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 800px;
+}
+.restaurant-data input {
+    display: block;
+}
+.buttons {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.buttons a {
+    padding: 3rem;
+    display: block;
+}
+
+/* REVIEWS */
+.reviews {
+    margin-inline: auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+.review {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.menu {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    display: flex;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.menu form {
+    display: flex;
+}
