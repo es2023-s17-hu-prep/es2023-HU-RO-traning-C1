@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Restaurant;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\RateLimiter;
 
 class AuthController extends Controller
 {
@@ -29,14 +30,33 @@ class AuthController extends Controller
             return back()->withErrors(['authError' => 'Email or password is incorrect.']);
         }
 
+        // Create a throttle key
+        $throttleKey = strtolower($request->get('email') . '-' . $request->ip());
+
+        // if the rate limiter hits the threshold, we should not let the user to log in
+        if (RateLimiter::tooManyAttempts($throttleKey, 3)) {
+            $availableIn = RateLimiter::availableIn($throttleKey);
+            return back()
+                ->withInput()
+                ->withErrors(['authError' => 'Too many login attempts. Wait ' . $availableIn . ' seconds.']);
+        }
+
         // Check the password
         if (!Hash::check($request->get('password'), $user->password)) {
-            return back()->withErrors(['authError' => 'Email or password is incorrect.']);
+            // hit the rate limiter on failed login attempt
+            RateLimiter::hit($throttleKey, 30);
+
+            return back()
+                ->withInput()
+                ->withErrors(['authError' => 'Email or password is incorrect.']);
         }
+
+        // Clear the rate limiter
+        RateLimiter::clear($throttleKey);
 
         // check if the user is locked
         if ($user->locked) {
-            return back()->withErrors(['authError' => 'This user is locked.']);
+            return back()->withInput()->withErrors(['authError' => 'This user is locked.']);
         }
 
         // Login
@@ -59,7 +79,9 @@ class AuthController extends Controller
         // Try getting the user from the db
         $user = User::where('email', $request->get('email'))->first();
         if ($user) {
-            return back()->withErrors(['regError' => 'User with this email already exists.']);
+            return back()
+                ->withInput()
+                ->withErrors(['regError' => 'User with this email already exists.']);
         }
 
         // upload the logo if exists
