@@ -1,0 +1,93 @@
+/* STYLES FOR THE TESTIMONIALS SECTION */
+.testimonials {
+  width: 100%;
+  padding: 100px;
+  position: relative;
+  margin-block: 40px;
+  background-color: var(--primary-lighter);
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+  height: 600px;
+}
+.testimonials h2 {
+  width: 500px;
+  margin-left: 100px;
+}
+.testimonials .quote {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* TESTIMONIAL CARD */
+.testimonial {
+  position: absolute;
+  background-color: white;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.testimonial img {
+  width: 26px;
+}
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.testimonial-content p {
+  line-height: 1.5em;
+}
+.testimonial-content h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* TESTIMONIAL POSITIONING */
+.testimonial:nth-child(1) {
+  width: 350px;
+  top: 300px;
+  left: 350px;
+}
+.testimonial:nth-child(3) {
+  width: 500px;
+  top: 150px;
+  left: 725px;
+}
+.testimonial:nth-child(2) {
+  width: 350px;
+  top: 400px;
+  left: 725px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (width <= 768px) {
+  .testimonials {
+    height: fit-content;
+    padding: 75px 30px;
+    gap: 32px;
+  }
+  .testimonials h2 {
+    width: 100%;
+    font-size: 40px;
+    margin: 0;
+  }
+  .testimonial {
+    position: static;
+    width: 100% !important;
+  }
+  .testimonials .quote {
+    top: 15px;
+    left: 15px;
+  }
+}

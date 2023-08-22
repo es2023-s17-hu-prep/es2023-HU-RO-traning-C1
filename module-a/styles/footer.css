@@ -1,0 +1,44 @@
+/* STYLES FOR THE FOOTER */
+footer {
+  background-color: #000;
+  padding: 5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: white;
+}
+
+footer a {
+  color: white;
+  font-weight: normal !important;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER LEFT SIDE */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.footer-left > div {
+  display: flex;
+  gap: 2rem;
+}
+.footer-darker-text {
+  color: #999;
+}
+
+/* FOOTER RIGHT SIDE */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+footer .socials {
+  display: flex;
+  gap: 1rem;
+}

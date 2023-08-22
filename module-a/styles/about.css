@@ -1,0 +1,170 @@
+/* STYLES FOR THE ABOUT PAGE */
+
+h2 {
+  font-size: 44px;
+  font-weight: bold;
+}
+h5 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* STORY */
+.story {
+  max-width: 800px;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.timeline {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 75px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: var(--primary-main);
+}
+
+.dot {
+  position: relative;
+}
+.dot::before {
+  content: attr(data-year);
+  font-weight: bold;
+  color: var(--primary-main);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  top: -45px;
+}
+.dot.reverse::before {
+  top: 30px;
+}
+.dot-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-main);
+  outline: 3px solid var(--primary-main);
+  outline-offset: 3px;
+}
+
+.dot-text {
+  position: absolute;
+  text-align: center;
+  color: #343434;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+}
+.dot-text::before {
+  content: "";
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 60px;
+  width: 1px;
+  background-color: #ccc;
+}
+.dot-text::after {
+  content: "";
+  position: absolute;
+  background-color: #ccc;
+  width: 5px;
+  height: 5px;
+  top: -16px;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot.reverse .dot-text {
+  top: -175px;
+}
+.dot.reverse .dot-text::before {
+  top: 75px;
+}
+.dot.reverse .dot-text::after {
+  top: 75px;
+}
+
+/* CONNECT SECTION */
+.connect {
+  width: 100%;
+  background-color: var(--primary-main);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 28px;
+  padding: 100px 50px;
+  color: white;
+}
+.connect p {
+  max-width: 800px;
+  margin-inline: auto;
+  line-height: 1.5em;
+}
+.connect button {
+  background-color: white;
+  color: var(--primary-main);
+  font-weight: bold;
+  padding: 16px;
+  font-size: 16px;
+}
+
+/* MEET THE TEAM */
+.meet {
+  max-width: 800px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 78px;
+  align-items: center;
+  justify-content: center;
+}
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 200px;
+}
+.team-member img {
+  border-radius: 50%;
+  max-width: 75px;
+}
+.team-member h4 {
+  font-weight: normal;
+  text-align: center;
+}

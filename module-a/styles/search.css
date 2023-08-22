@@ -1,0 +1,91 @@
+/* STYLES FOR THE SEARCH SECTION */
+.search {
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.search .title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SHOW MORE */
+.show-more-btn {
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+/* SEARCH */
+.input-paddings {
+  padding-inline: 40px;
+}
+.input-container {
+  position: relative;
+}
+#search-checkbox {
+  appearance: none;
+  outline: none !important;
+}
+
+/* SIMPLE SEARCH */
+.search-container:has(#search-checkbox:checked) {
+  width: 700px;
+}
+.search-container {
+  width: 400px;
+  display: flex;
+  gap: 8px;
+  margin-inline: auto;
+}
+.search-icon-black {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 8px;
+}
+#search-checkbox:not(:checked) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+  background-image: url("../assets/filter-icon.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+#simple-container:has(#search-checkbox:checked) *:not(input[type="checkbox"]) {
+  display: none;
+}
+.search-container:has(#search-checkbox:not(:checked)) .complex {
+  display: none;
+}
+
+/* COMPLEX SEARCH */
+#search-checkbox:checked {
+  background-color: white;
+  cursor: pointer;
+  color: var(--primary-main);
+  font-weight: 600;
+}
+#search-checkbox:checked::before {
+  content: "Simple search";
+  white-space: nowrap;
+  background-color: white;
+  position: absolute;
+  top: 50px;
+  left: calc(700px / 2 - 45px);
+}
+
+/* MEDIA QUERIES */
+@media screen and (width <= 768px) {
+  .search {
+    padding-inline: 30px;
+  }
+}
