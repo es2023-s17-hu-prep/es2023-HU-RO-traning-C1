@@ -1,0 +1,163 @@
+/* ABOUT PAGE */
+section {
+  padding: 75px 400px;
+}
+h2 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* OUR STORY */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  margin-block-start: 200px;
+  margin-block-end: 50px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: var(--primary-main);
+}
+.year:first-child {
+  margin-left: 50px;
+}
+.year:last-child {
+  margin-right: 50px;
+}
+.year {
+  width: 16px;
+  height: 16px;
+  outline: 2px solid var(--primary-main);
+  outline-offset: 3px;
+  border-radius: 50%;
+  background-color: var(--primary-main);
+  position: relative;
+}
+.year::before {
+  content: attr(data-year);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--primary-main);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.year.reverse::before {
+  top: 20px;
+}
+
+.year-content {
+  position: absolute;
+  text-align: center;
+  color: #333;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.year-content::before {
+  content: "";
+  height: 60px;
+  width: 1px;
+  position: absolute;
+  top: -70px;
+  transform: translateX(-50%);
+  left: 50%;
+  background-color: #ccc;
+}
+.year-content::after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background-color: #ccc;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.year.reverse .year-content {
+  top: -130px;
+}
+.year.reverse .year-content::before {
+  top: 55px;
+}
+.year.reverse .year-content::after {
+  top: 55px;
+}
+
+/* TEAM */
+.member-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+.member > * {
+  text-align: center;
+}
+.member > h6 {
+  font-size: 17px;
+}
+
+/* CONNECT */
+#connect {
+  background-color: var(--primary-main);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+#connect p {
+  text-align: center;
+}
+.contact-button {
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  width: fit-content;
+  margin-inline: auto;
+  display: block;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.title h5 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.title * {
+  text-align: center;
+}
+
+/* MEDIA QUERY */
+@media screen and (width <= 768px) {
+  section {
+    padding: 75px 30px;
+  }
+  #our-story {
+    padding: 75px 0 !important;
+  }
+}

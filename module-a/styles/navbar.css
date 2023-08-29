@@ -1,0 +1,42 @@
+/* NAVBAR */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 22px 100px;
+  width: 100%;
+  gap: 38px;
+}
+
+/* LIST */
+nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+nav .nav-list a {
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+nav .nav-list a:hover {
+  text-decoration: underline;
+}
+
+nav .nav-menu-icon {
+  cursor: pointer;
+  margin-left: auto;
+  display: none;
+}
+
+/* MEDIA QUERY */
+@media screen and (width <= 768px) {
+  nav {
+    padding: 15px 35px;
+  }
+  nav .nav-menu-icon {
+    display: block;
+  }
+  nav .nav-list {
+    display: none;
+  }
+}

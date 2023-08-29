@@ -1,0 +1,91 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+img {
+  max-width: 100%;
+}
+
+/* CSS VARIABLES */
+:root {
+  --primary-main: #7c3aed;
+  --primary-light: #c4b5fd;
+  --primary-lighter: #ede9fe;
+  --input-bg: #f5f5f5;
+}
+
+/* BASE STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BASE COMPONENTS */
+.button {
+  background-color: var(--primary-main);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.button:hover,
+.button:focus-visible {
+  text-decoration: underline;
+}
+
+.button.secondary {
+  background-color: var(--primary-lighter);
+  color: var(--primary-main) !important;
+}
+
+a {
+  color: var(--primary-main);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+a:hover,
+a:focus-within {
+  text-decoration: underline;
+}
+
+input,
+textarea {
+  background-color: var(--input-bg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 8px 16px;
+  resize: none;
+}
+
+/* HELPER CLASSES */
+.grayscale {
+  filter: grayscale();
+}
+.text-center {
+  text-align: center;
+}
+.relative {
+  position: relative;
+}

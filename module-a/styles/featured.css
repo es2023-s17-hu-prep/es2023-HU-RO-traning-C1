@@ -1,0 +1,98 @@
+/* FEATURED */
+#featured {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.title h2 {
+  font-size: 45px;
+  font-weight: bold;
+}
+.title h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #333;
+}
+
+/* RESTAURANTS */
+.restaurants {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.restaurant {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  background-color: white;
+}
+.restaurant-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.restaurant-title > h3 {
+  font-size: 25px;
+}
+.restaurant p {
+  color: #555;
+  margin-bottom: auto;
+}
+.restaurant > img {
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* CIRCLES IN THE BACK */
+#featured::before,
+#featured::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: var(--primary-lighter);
+  z-index: -1;
+}
+#featured::before {
+  right: -150px;
+  top: 50px;
+  width: 400px;
+}
+#featured::after {
+  left: -250px;
+  top: 300px;
+  width: 600px;
+}
+
+/* MEDIA QUERY */
+@media screen and (width <= 768px) {
+  #featured {
+    padding: 50px 30px;
+  }
+
+  .restaurants {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  #featured::before {
+    right: -150px;
+    top: 1250px;
+  }
+  #featured::after {
+    left: -250px;
+    top: 300px;
+  }
+}
