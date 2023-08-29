@@ -1,0 +1,53 @@
+// Global resets and styles
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.title-center {
+    text-align: center;
+  }
+}
+
+// Reset margins
+@for $i from 1 through 6 {
+  h#{$i}{
+    margin: 0;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+// Mobile layout
+.mobile-only {
+  display: none;
+}
+@media (max-width: $breakpoint-mobile) {
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: unset;
+  }
+}
+
+section {
+  padding: 2rem 0;
+}

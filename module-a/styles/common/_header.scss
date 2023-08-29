@@ -1,0 +1,24 @@
+// Header and navigation styles
+
+header {
+  padding: 1rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  nav {
+    a {
+      padding: 1rem;
+      font-weight: bold;
+    }
+  }
+
+  // Mobile layout
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

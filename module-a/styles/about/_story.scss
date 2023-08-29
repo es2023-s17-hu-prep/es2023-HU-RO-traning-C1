@@ -1,0 +1,82 @@
+// Styles for the story section
+.story {
+  padding-top: 4rem;
+}
+
+.timeline {
+  height: 600px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &::before {
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    top: 50%;
+    border-bottom: 1px solid $primary;
+  }
+
+  .time {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: $primary;
+      content: ' ';
+      border-radius: 160px;
+      box-shadow: 0 0 0 2px $primary;
+      border: 3px solid white;
+    }
+
+    &::after {
+      position: absolute;
+      top: 20px;
+      height: 120px;
+      content: ' ';
+      border-left: 1px solid #ccc;
+    }
+
+    .year {
+      font-weight: bold;
+      color: $primary;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    p {
+      position: absolute;
+      top: 150px;
+      width: 200px;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .time.up {
+    .year {
+      top: unset;
+      bottom: -40px;
+    }
+
+    p {
+      top: unset;
+      bottom: 150px;
+    }
+
+    &::after {
+      top: -140px;
+      height: 120px;
+    }
+  }
+}

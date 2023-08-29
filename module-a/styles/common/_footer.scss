@@ -1,0 +1,21 @@
+main {
+  min-height: calc(100vh - 200px);
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 2rem 0;
+
+  a {
+    color: white;
+  }
+
+  .copyright {
+    color: $light-gray;
+  }
+
+  .follow-title {
+    font-size: 24px;
+  }
+}

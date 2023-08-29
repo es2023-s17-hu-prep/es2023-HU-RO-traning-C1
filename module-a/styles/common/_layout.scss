@@ -1,0 +1,47 @@
+// Layout and flex utilities
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+// Flex gap from 1 to 10
+@for $i from 1 through 10 {
+  .gap-#{$i}{
+    gap: #{$i}rem;
+  }
+}
+
+// Layout wrapper
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  // Mobile layout
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1rem;
+    margin: 0;
+  }
+}

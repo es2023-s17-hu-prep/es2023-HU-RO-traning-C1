@@ -1,0 +1,21 @@
+// Call to action styles
+section.cta {
+  background: $primary;
+  color: white;
+  padding: 8rem 0;
+
+  .wrapper {
+    max-width: 800px;
+
+    p {
+      line-height: 150%;
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .btn {
+    background: white;
+  }
+}

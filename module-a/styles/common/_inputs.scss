@@ -1,0 +1,20 @@
+// Styles for form inputs
+
+input, textarea {
+  padding: 12px 24px;
+  border: none;
+  background: $light-gray;
+  border-radius: 8px;
+}
+
+textarea {
+  height: 200px;
+}
+
+input[type="search"] {
+  padding-left: 2rem;
+}
+
+input[type="checkbox"] {
+  display: none;
+}

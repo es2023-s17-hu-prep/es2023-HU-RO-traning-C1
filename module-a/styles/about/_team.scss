@@ -1,0 +1,31 @@
+
+.team {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem 6rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+
+  img {
+    width: 100px;
+    margin-bottom: 8px;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+  
+  .position {
+    color: $gray;
+  }
+}

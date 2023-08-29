@@ -1,0 +1,245 @@
+.hero {
+  display: flex;
+  min-height: 100vh;
+}
+.hero img.illustration {
+  margin-left: auto;
+}
+.hero .wrapper {
+  align-self: stretch;
+}
+.hero .text {
+  max-width: 550px;
+}
+.hero .text p {
+  line-height: 200%;
+  color: #3f3f3f;
+}
+.hero .bg {
+  position: absolute;
+  inset: 0;
+  background: #EBE7FD;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+.hero .bg .shapes {
+  position: relative;
+  filter: blur(150px);
+}
+.hero .bg .shape {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  background: #7C3AED;
+  width: 300px;
+  height: 300px;
+  border-radius: 1000px;
+}
+@media (max-width: 768px) {
+  .hero .wrapper {
+    padding-top: 5rem;
+    flex-direction: column;
+  }
+  .hero .wrapper .illustration {
+    width: 100%;
+  }
+}
+
+.featured {
+  padding: 10rem 0;
+  position: relative;
+}
+.featured::before {
+  content: " ";
+  position: absolute;
+  background: #EBE7FD;
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  left: -100px;
+  z-index: -1;
+  border-radius: 1000px;
+}
+.featured::after {
+  content: " ";
+  position: absolute;
+  background: #EBE7FD;
+  width: 300px;
+  height: 300px;
+  right: -100px;
+  top: 0;
+  z-index: -1;
+  border-radius: 1000px;
+}
+@media (max-width: 768px) {
+  .featured {
+    width: 100%;
+  }
+  .featured .section-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurants {
+    flex-direction: column;
+  }
+}
+.restaurant-card {
+  background: white;
+  box-sizing: border-box;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 1rem;
+  width: 100%;
+  flex-grow: 0;
+}
+.restaurant-card img {
+  border-radius: 16px;
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+.restaurant-card .content .stars {
+  gap: 4px;
+}
+.restaurant-card .content .stars .star {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/Star Icon.svg") no-repeat;
+  background-size: contain;
+}
+.restaurant-card .content .stars .star-gray {
+  filter: saturate(0);
+}
+.restaurant-card .content p {
+  margin-top: 12px;
+  color: #3f3f3f;
+  line-height: 150%;
+}
+
+.testimonials {
+  padding: 8rem 0;
+  background: #EBE7FD;
+}
+.testimonials .testimonials-title {
+  margin-left: 4rem;
+  width: 350px;
+  position: relative;
+}
+.testimonials .testimonials-title::before {
+  content: url("../../assets/Quote mark.svg");
+  position: absolute;
+  left: -110px;
+  top: -64px;
+}
+.testimonials .testimonial-cards {
+  max-width: 1000px;
+  margin: -6rem auto 0;
+}
+.testimonials .testimonial-cards .testimonial-1 {
+  width: 400px;
+}
+.testimonials .testimonial-cards .testimonial-2 {
+  width: 500px;
+}
+.testimonials .testimonial-cards .testimonial-3 {
+  width: 400px;
+}
+.testimonials .testimonial-card {
+  box-sizing: border-box;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: white;
+}
+.testimonials .testimonial-card blockquote {
+  line-height: 150%;
+  position: relative;
+}
+.testimonials .testimonial-card blockquote::before {
+  content: " ";
+  width: 16px;
+  height: 16px;
+  background: url("../../assets/Quote mark.svg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -24px;
+  top: 0;
+}
+.testimonials .testimonial-card blockquote cite {
+  display: block;
+  font-weight: bold;
+  font-style: normal;
+}
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 5rem 0;
+  }
+  .testimonials .testimonials-title {
+    margin: 0;
+    width: 100%;
+  }
+  .testimonials .testimonials-title::before {
+    left: -10px;
+  }
+  .testimonials .testimonial-cards {
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+  }
+  .testimonials .testimonial-cards .testimonial-card {
+    width: 100%;
+  }
+}
+
+.search .btn-secondary {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+.search input {
+  height: 48px;
+  flex-grow: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+.search .search-row {
+  margin: 0 auto;
+}
+.search .search-row .advanced-search {
+  display: none;
+}
+.search .search-row:has(input:checked) .simple-search {
+  display: none;
+}
+.search .search-row:has(input:checked) .advanced-search {
+  display: flex;
+}
+.search .simple-search {
+  position: relative;
+  width: 300px;
+}
+.search .simple-search::before {
+  content: " ";
+  background: url("../../assets/Search Icon Black.svg");
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  left: 6px;
+  top: 12px;
+  z-index: 10;
+  position: absolute;
+}
+.search .filter {
+  right: 12px;
+  top: 14px;
+  z-index: 10;
+  position: absolute;
+}
+.search .simple-button {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=index.css.map */

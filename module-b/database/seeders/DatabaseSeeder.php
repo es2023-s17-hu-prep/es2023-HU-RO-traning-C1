@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // Seed data
+        \DB::unprepared(File::get(__DIR__ . '/dump.sql'));
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Create restaurant admin
+        User::create([
+            'email' => 'ferenc.kis@sze.hu',
+            'name' => 'Ferenc Kis',
+            'role' => 'restaurantAdmin',
+            'restaurant_id' => 1,
+            'password' => bcrypt('12345678')
+        ]);
+
+        // Create dineEasy admin
+        User::create([
+            'email' => 'laszlo.nagy@dineeasy.com',
+            'name' => 'Laszlo Nagy',
+            'role' => 'dineEasyAdmin',
+            'restaurant_id' => null,
+            'password' => bcrypt('12345678')
+        ]);
     }
 }

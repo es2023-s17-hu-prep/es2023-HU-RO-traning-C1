@@ -1,0 +1,61 @@
+.search {
+  .btn-secondary {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+  }
+
+  input {
+    height: 48px;
+    flex-grow: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .search-row {
+    margin: 0 auto;
+
+    .advanced-search {
+      display: none;
+    }
+
+    &:has(input:checked) {
+      .simple-search {
+        display: none;
+      }
+      .advanced-search {
+        display: flex;
+      }
+    }
+  }
+
+  .simple-search {
+    position: relative;
+    width: 300px;
+  }
+
+  .simple-search::before {
+    content: ' ';
+    background: url("../../assets/Search Icon Black.svg");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    left: 6px;
+    top: 12px;
+    z-index: 10;
+    position: absolute;
+  }
+
+  .filter {
+    right: 12px;
+    top: 14px;
+    z-index: 10;
+    position: absolute;
+  }
+
+  .simple-button {
+    margin: 0 auto;
+  }
+}

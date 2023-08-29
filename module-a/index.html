@@ -1,1 +1,327 @@
-Landing
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DineEase</title>
+
+    <!-- SEO -->
+    <meta name="description"
+          content="Dive into culinary wonders with DineEase. We curate top-rated restaurants, each with distinct flavors and ambiance. From international dishes to traditional delights and gastronomic adventures, find your perfect spot with DineEase.">
+    <meta name="keywords" content="dining,restaurant,dineease">
+    <meta name="author" content="Janos Hidvegi">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<!-- Header -->
+<header class="wrapper row gap-2 items-center">
+    <!-- Logo -->
+    <img src="assets/Logo.svg" alt="DineEase" height="32">
+
+    <!-- Navigation -->
+    <nav class="row items-center mobile-hidden">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <img src="assets/Menu%20Icon.svg" alt="Mobile Menu" class="mobile-only">
+</header>
+
+<!-- Main content -->
+<main>
+    <!-- Hero section -->
+    <section id="hero" class="hero">
+        <!-- Hero background -->
+        <div class="bg">
+            <div class="shapes">
+                <div class="shape"></div>
+            </div>
+        </div>
+
+        <!-- Hero content -->
+        <div class="wrapper row items-center">
+            <!-- Hero text -->
+            <div class="col text gap-2">
+                <h1 class="animate animate-up">DineEase: Exceptional Dining Awaits.</h1>
+                <p class="animate animate-up delay-1">Dive into culinary wonders with DineEase. We curate top-rated restaurants, each with distinct flavors
+                    and ambiance. From international dishes to traditional delights and gastronomic adventures, find
+                    your perfect spot with DineEase.</p>
+
+                <a class="btn btn-primary animate animate-up delay-2" href="#search">
+                    <img src="assets/Search%20Icon.svg" alt="Search" width="32">
+                    Explore Restaurants
+                </a>
+            </div>
+
+            <!-- Hero illustration -->
+            <img src="assets/Hero%20Illustration.svg" class="illustration animate animate-up delay-4" alt="Hero Illustration" width="601">
+        </div>
+    </section>
+
+    <!-- Featured restaurants section -->
+    <section id="featured" class="featured">
+        <div class="wrapper col gap-2">
+            <!-- Section title -->
+            <div class="section-title title-left">
+                <h2>Featured Restaurants</h2>
+                <p>Discover Unforgettable Dining Destinations</p>
+            </div>
+
+            <!-- Restaurants -->
+            <div class="row justify-center gap-2 restaurants">
+                <div class="restaurant-card col">
+                    <img src="assets/Restaurant1.png" alt="Sermale Bistro">
+                    <div class="content">
+                        <div class="row justify-between items-center">
+                            <h3>Sarmele Bistro</h3>
+                            <div class="stars row">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <p>
+                            Experience Romania's culinary heart at Sarmale Bistro. Savor classics with a modern touch in
+                            our intimate, authentic ambiance. Celebrate timeless tradition.
+                        </p>
+                        <button class="btn btn-text ml-auto">Explore restaurant</button>
+                    </div>
+                </div>
+
+                <div class="restaurant-card col">
+                    <img src="assets/Restaurant2.png" alt="La Piața">
+                    <div class="content">
+                        <div class="row justify-between items-center">
+                            <h3>La Piața</h3>
+                            <div class="stars row">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                        </div>
+                        <p>
+                            Discover a fusion of Europe's flavors at La Piața, set in the heart of the city. Savor
+                            dishes from locally-sourced ingredients in our cozy bistro ambiance.
+                        </p>
+                        <button class="btn btn-text ml-auto">Explore restaurant</button>
+                    </div>
+                </div>
+
+                <div class="restaurant-card col">
+                    <img src="assets/Restaurant3.png" alt="Halász Fogadó">
+                    <div class="content">
+                        <div class="row justify-between items-center">
+                            <h3>Halász Fogadó</h3>
+                            <div class="stars row">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <p>
+                            Immerse in Eastern European authenticity at Halász Fogadó. Relish traditional dishes amid an
+                            atmosphere rich in charm and history. Join us for a timeless culinary experience.
+                        </p>
+                        <button class="btn btn-text ml-auto">Explore restaurant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials section -->
+    <section id="testimonials" class="testimonials">
+        <div class="wrapper col gap-2">
+            <!-- Testimonials section title -->
+            <h2 class="testimonials-title">
+                Delightful Experiences Shared by Our Guests
+            </h2>
+
+            <!-- Testimonials section cards -->
+            <div class="testimonial-cards row items-center gap-2">
+                <div class="testimonial-card testimonial-1">
+                    <blockquote>
+                        Exquisite flavors, impeccable service, and a memorable ambiance – DineEase made our celebration
+                        truly special!
+                        <cite>
+                            Robert & Emily
+                        </cite>
+                    </blockquote>
+                </div>
+                <div class="col gap-2">
+                    <div class="testimonial-card testimonial-2">
+                        <blockquote>
+                            DineEase guided us to hidden gems we never knew existed! We've become food adventurers, thanks
+                            to this platform.
+                            <cite>
+                                Lisa & Mark
+                            </cite>
+                        </blockquote>
+                    </div>
+                    <div class="testimonial-card testimonial-3">
+                        <blockquote>
+                            With DineEase, we've uncovered culinary treasures right in our city. Every dining recommendation
+                            feels like an exclusive invitation to a world of flavors. We thought we knew our local dining
+                            scene, but DineEase introduced us to so much more.
+                            <cite>
+                                Emma & Jacob
+                            </cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search section -->
+    <section id="search" class="search">
+        <div class="wrapper col gap-2">
+            <!-- Section title -->
+            <div class="section-title title-center">
+                <h2>Find Your Perfect Dining Spot</h2>
+                <p>Search by Cuisine, Location, or Name</p>
+            </div>
+
+            <!-- Search -->
+            <label class="row gap-1 search-row">
+                <input type="checkbox" aria-hidden="true" />
+
+                <!-- Simple search -->
+                <div class="simple-search">
+                    <input type="search" placeholder="Search for restaurants">
+                    <img class="filter" src="assets/Filter%20Icon.svg" alt="Filter">
+                </div>
+
+                <!-- Advanced search -->
+                <div class="advanced-search col items-center gap-1">
+                    <div class="row gap-1">
+                        <input type="text" placeholder="Cuisine">
+                        <input type="text" placeholder="Location">
+                        <input type="text" placeholder="Name">
+                    </div>
+                    <div>
+                        <a class="btn btn-text simple-button">
+                            Simple search
+                        </a>
+                    </div>
+                </div>
+                <button class="btn btn-secondary">
+                    <img src="assets/Search%20Icon%20Primary.svg" alt="Search">
+                </button>
+            </label>
+
+            <!-- Results -->
+            <div class="row justify-center gap-2 restaurants">
+                <div class="restaurant-card col">
+                    <img src="assets/Restaurant1.png" alt="Sermale Bistro">
+                    <div class="content">
+                        <div class="row justify-between items-center">
+                            <h3>Sarmele Bistro</h3>
+                            <div class="stars row">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <p>
+                            Experience Romania's culinary heart at Sarmale Bistro. Savor classics with a modern touch in
+                            our intimate, authentic ambiance. Celebrate timeless tradition.
+                        </p>
+                        <button class="btn btn-text ml-auto">Explore restaurant</button>
+                    </div>
+                </div>
+
+                <div class="restaurant-card col">
+                    <img src="assets/Restaurant2.png" alt="La Piața">
+                    <div class="content">
+                        <div class="row justify-between items-center">
+                            <h3>La Piața</h3>
+                            <div class="stars row">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star star-gray"></div>
+                            </div>
+                        </div>
+                        <p>
+                            Discover a fusion of Europe's flavors at La Piața, set in the heart of the city. Savor
+                            dishes from locally-sourced ingredients in our cozy bistro ambiance.
+                        </p>
+                        <button class="btn btn-text ml-auto">Explore restaurant</button>
+                    </div>
+                </div>
+
+                <div class="restaurant-card col">
+                    <img src="assets/Restaurant3.png" alt="Halász Fogadó">
+                    <div class="content">
+                        <div class="row justify-between items-center">
+                            <h3>Halász Fogadó</h3>
+                            <div class="stars row">
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                        </div>
+                        <p>
+                            Immerse in Eastern European authenticity at Halász Fogadó. Relish traditional dishes amid an
+                            atmosphere rich in charm and history. Join us for a timeless culinary experience.
+                        </p>
+                        <button class="btn btn-text ml-auto">Explore restaurant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <!-- Contacts -->
+    <div class="wrapper row justify-between">
+        <div class="col gap-1">
+            <img src="assets/Logomark.svg" alt="DineEase" width="64">
+            <div class="row gap-1">
+                <a href="terms.html">Terms of Use</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="row gap-1">
+                <a href="phone:+36301324567">+36 30 123 4567</a>
+                <a href="mailto:support@dineease.com">suppor@dineease.com</a>
+            </div>
+
+            <span class="copyright">
+                &copy; 2023 - All rights reserved
+            </span>
+        </div>
+
+        <!-- Social media -->
+        <div class="col gap-1">
+            <span class="follow-title">Follow Us</span>
+            <div class="row gap-1">
+                <img src="assets/Facebook%20Icon.svg" alt="Facebook">
+                <img src="assets/Instagram%20Icon.svg" alt="Instagram">
+                <img src="assets/Twitter%20Icon.svg" alt="Twitter">
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
