@@ -19,7 +19,7 @@ return new class extends Migration
             $table->enum('role', ['restaurantAdmin', 'dineEasyAdmin'])->default('restaurantAdmin');
 
             $table->unsignedBigInteger('restaurant_id')->nullable();
-            $table->foreign('restaurant_id')->references('id')->on('restaurants');
+            $table->foreign('restaurant_id')->references('restaurant_id')->on('restaurants');
 
             $table->timestamps();
         });

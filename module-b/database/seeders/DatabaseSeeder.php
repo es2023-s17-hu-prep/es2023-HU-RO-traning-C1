@@ -13,68 +13,84 @@ use Illuminate\Support\Facades\File;
 class DatabaseSeeder extends Seeder
 {
     /**
+     * Function to read file easily
+     */
+    public function readCsv(string $fileName)
+    {
+        $lines = File::lines(__DIR__ . $fileName)->collect();
+        $header = collect(str_getcsv($lines->shift()));
+
+        return $lines->map(fn ($row) => $header->combine(str_getcsv($row)))->toArray();
+    }
+
+    /**
      * Seed the application's database.
      */
     public function run(): void
     {
+        Restaurant::insert($this->readCsv('/restaurants.csv'));
+        Menu::insert($this->readCsv('/menus.csv'));
+        Reservation::insert($this->readCsv('/reservations.csv'));
+        Review::insert($this->readCsv('/reviews.csv'));
+
         /**
          * Create the restaurants
          */
-        $this->readFile('/restaurants.csv')->each(function ($r) {
-            $split = explode(',', $r);
+        // $this->readFile('/restaurants.csv')->each(function ($r) {
+        //     $split = explode(',', $r);
 
-            Restaurant::create([
-                'id' => $split[0],
-                'name' => $split[1],
-                'location' => $split[2],
-                'cuisine' => $split[3],
-            ]);
-        });
+        //     Restaurant::create([
+        //         'id' => $split[0],
+        //         'name' => $split[1],
+        //         'location' => $split[2],
+        //         'cuisine' => $split[3],
+        //     ]);
+        // });
 
         /**
          * Create the reviews
          */
-        $this->readFile('/reviews.csv')->each(function ($r) {
-            $split = explode(',', $r);
+        // $this->readFile('/reviews.csv')->each(function ($r) {
+        //     $split = explode(',', $r);
 
-            Review::create([
-                'id' => $split[0],
-                'restaurant_id' => $split[1],
-                'user_name' => $split[2],
-                'rating' => $split[3],
-                'comment' => $split[4],
-            ]);
-        });
+        //     Review::create([
+        //         'id' => $split[0],
+        //         'restaurant_id' => $split[1],
+        //         'user_name' => $split[2],
+        //         'rating' => $split[3],
+        //         'comment' => $split[4],
+        //     ]);
+        // });
 
         /**
          * Create the reservations
          */
-        $this->readFile('/reservations.csv')->each(function ($r) {
-            $split = explode(',', $r);
+        // $this->readFile('/reservations.csv')->each(function ($r) {
+        //     $split = explode(',', $r);
 
-            Reservation::create([
-                'id' => $split[0],
-                'restaurant_id' => $split[1],
-                'user_name' => $split[2],
-                'date' => $split[3],
-                'time' => $split[4],
-                'party_size' => $split[5],
-            ]);
-        });
+        //     Reservation::create([
+        //         'id' => $split[0],
+        //         'restaurant_id' => $split[1],
+        //         'user_name' => $split[2],
+        //         'date' => $split[3],
+        //         'time' => $split[4],
+        //         'party_size' => $split[5],
+        //     ]);
+        // });
 
         /**
          * Create the menu items
          */
-        $this->readFile('/menus.csv')->each(function ($r) {
-            $split = explode(',', $r);
+        // $this->readFile('/menus.csv')->each(function ($r) {
+        //     $split = explode(',', $r);
 
-            Menu::create([
-                'id' => $split[0],
-                'restaurant_id' => $split[1],
-                'dish_name' => $split[2],
-                'price' => $split[3],
-            ]);
-        });
+        //     Menu::create([
+        //         'id' => $split[0],
+        //         'restaurant_id' => $split[1],
+        //         'dish_name' => $split[2],
+        //         'price' => $split[3],
+        //     ]);
+        // });
 
         /**
          * Create the two users
@@ -96,11 +112,11 @@ class DatabaseSeeder extends Seeder
     /**
      * Function to read file easily
      */
-    public function readFile(string $fileName)
-    {
-        return File::lines(__DIR__ . $fileName)
-            ->collect()
-            ->skip(1) // skip the headers
-            ->filter(fn ($i) => strlen($i) > 1); // filter the empty lines
-    }
+    // public function readFile(string $fileName)
+    // {
+    //     return File::lines(__DIR__ . $fileName)
+    //         ->collect()
+    //         ->skip(1) // skip the headers
+    //         ->filter(fn ($i) => strlen($i) > 1); // filter the empty lines
+    // }
 }
